@@ -1,8 +1,5 @@
 # Experiment 17: Linked Lists in C++
 
-## Name: Maitraiyee Vashistha
-## PRN: 24070123057
-## Division: ENTC-A3
 ## Title: Understanding Linked lists in C++
 
 -----
