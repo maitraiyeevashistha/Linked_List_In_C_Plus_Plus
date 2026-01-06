@@ -1,58 +1,69 @@
 #include <iostream>
 using namespace std;
 
-class Node{
-    
+class Node {
     int roll;
-    Node *Next
-    
-    public :
-    
-    Node(int data){                   // Constructor
-        val = data;
+    Node* next;
+
+public:
+    // Constructor
+    Node() {
+        roll = 0;
         next = NULL;
     }
-    
-}
 
-int Node :: GetRoll(){                // getter
-    return roll;
-}
-
-void Node :: SetRoll(int r){          // setter 
-    roll = r
-}
-
-class LinkedList{
-    Node *head
-}
- void AppendNode(){
-    cout << "enter the your roll number" << endl;
-    cin  >> r;
-    n -> SetRoll(r);
-    
-    if(head == null){
-        head = n;
+    // Getter
+    int GetRoll() {
+        return roll;
     }
- }
+
+    // Setter
+    void SetRoll(int r) {
+        roll = r;
+    }
+
+    // Give LinkedList access
+    friend class LinkedList;
+};
+
+class LinkedList {
+    Node* head;
+
+public:
+    LinkedList() {
+        head = NULL;
+    }
+
+    void AppendNode() {
+        int r;
+        Node* n = new Node();
+
+        if (n == NULL) {
+            return;
+        }
+
+        cout << "Enter your roll number: ";
+        cin >> r;
+        n->SetRoll(r);
+
+        if (head == NULL) {
+            head = n;
+        } else {
+            Node* temp = head;
+            while (temp->next != NULL) {
+                temp = temp->next;
+            }
+            temp->next = n;
+        }
+    }
+};
 
 int main() {
-    int r;
-    Node *n = new Node()
-    if(n == null){
-        return
-    }
-    
-    cout << "enter the your roll number" << endl;
-    cin  >> r;
-    n -> SetRoll(r);
-    
-    if(head == null){
-        head = n;
-    }
+    LinkedList list;
+    list.AppendNode();
+
     return 0;
 }
-
 
 
 
